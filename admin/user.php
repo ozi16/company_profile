@@ -1,3 +1,19 @@
+<?php
+session_start();
+include 'koneksi.php';
+// munculkan / pilih sebuah atau semua kolom dari table user
+$queryUser = mysqli_query($koneksi, "SELECT * FROM user");
+// mysql_fetch_assoc($query)= untuk menjadikan hasil query menjadi sebuah data (object,array)
+
+// jika parameternya ada ?delete=nilai param
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete']; //mengambil nilai params
+
+    // query / perintah hapus
+    $delete = mysqli_query($koneksi, "DELETE FROM user  WHERE id ='$id'");
+    header("location:user.php?hapus=berhasil");
+}
+?>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -60,7 +76,15 @@
                                 <div class="card">
                                     <div class="card-header">Data user</div>
                                     <div class="card-body">
-                                        <div class="table table-bordered">
+                                        <?php if (isset($_GET['hapus'])): ?>
+                                            <div class="alert alert-success" role="alert">
+                                                Data Berhasil
+                                            </div>
+                                        <?php endif ?>
+                                        <div align="right" class="mb-3">
+                                            <a href="tambah-user.php" class="btn btn-primary">Tambah</a>
+                                        </div>
+                                        <table class="table table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -70,14 +94,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
+                                                <?php $no = 1;
+                                                while ($rowUser = mysqli_fetch_assoc($queryUser)) { ?>
+                                                    <tr>
+                                                        <td><?php echo $no++ ?></td>
+                                                        <td><?php echo $rowUser['nama'] ?></td>
+                                                        <td><?php echo $rowUser['email'] ?></td>
+                                                        <td>
+                                                            <a href="tambah-user.php?edit=<?php echo $rowUser['id'] ?>" class="btn btn-success btn-sm">
+                                                                <span class="tf-icon bx bx-pencil bx-18px"></span>
+                                                            </a>
+                                                            <a onclick="return confirm('Apakah anda yakin akan menghapus data ini??')"
+                                                                href="user.php?delete=<?php echo $rowUser['id'] ?>" class="btn btn-danger btn-sm">
+                                                                <span class="tf-icon bx bx-trash bx-18px "></span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
                                             </tbody>
-                                        </div>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
