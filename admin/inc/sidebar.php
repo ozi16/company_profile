@@ -78,7 +78,7 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pengaturan-website.php"  class="menu-link">
+                    <a href="pengaturan-website.php" class="menu-link">
                         <div data-i18n="Without menu">Without menu</div>
                     </a>
                 </li>
@@ -134,12 +134,12 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
+                <div data-i18n="Authentications">Instruktur</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                        <div data-i18n="Basic">Login</div>
+                    <a href="instruktur.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Data Instruktur</div>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -157,23 +157,23 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
+                <div data-i18n="Misc">Profile</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="pages-misc-error.html" class="menu-link">
-                        <div data-i18n="Error">Error</div>
+                        <div data-i18n="Error">Data Profile</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="pages-misc-under-maintenance.html" class="menu-link">
-                        <div data-i18n="Under Maintenance">Under Maintenance</div>
+                        <div data-i18n="Under Maintenance">Data kategori</div>
                     </a>
                 </li>
             </ul>
         </li>
         <!-- Components -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Pengaturab</span></li>
         <!-- Cards -->
         <li class="menu-item">
             <a href="cards-basic.html" class="menu-link">

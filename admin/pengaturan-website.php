@@ -32,6 +32,8 @@ if (isset($_POST['simpan'])) {
                 die;
             } else {
                 $upload = "upload/";
+                // unlick () : mendelete file
+                unlink('upload/' . $rowPengaturan['logo']);
                 // pindahkan gambar dari tmp folder ke folder yg kita buat
                 move_uploaded_file($_FILES['foto']['tmp_name'], $upload . $nameFile);
 
@@ -235,10 +237,18 @@ if (isset($_POST['edit'])) {
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
-                                                <div class="col-sm-12">
+                                                <div class="col-sm-6">
                                                     <label for="" class="form-label">Foto</label>
-                                                    <input type="file"
+                                                    <input class="form-control" type="file"
                                                         name="foto">
+                                                    <style>
+                                                        .pengaturan-website-upload {
+                                                            border-radius: 20px;
+                                                            width: 100%;
+                                                            border: solid 1px black;
+                                                        }
+                                                    </style>
+                                                    <img class="pengaturan-website-upload mt-3" width="200" src="upload/<?php echo isset($rowPengaturan['logo']) ? $rowPengaturan['logo'] : '' ?>" alt="">
                                                 </div>
                                             </div>
                                             <div class="mb-3">
