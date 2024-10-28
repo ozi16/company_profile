@@ -109,6 +109,17 @@
             <span class="menu-header-text">Pages</span>
         </li>
         <li class="menu-item">
+
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="user.php" class="menu-link">
+                        <div data-i18n="Account">Data User</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">User</div>
@@ -117,6 +128,11 @@
                 <li class="menu-item">
                     <a href="user.php" class="menu-link">
                         <div data-i18n="Account">Data User</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="contact-admin.php" class="menu-link">
+                        <div data-i18n="Account">contact</div>
                     </a>
                 </li>
                 <li class="menu-item">
